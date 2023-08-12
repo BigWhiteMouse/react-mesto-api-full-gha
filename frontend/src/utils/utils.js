@@ -1,1 +1,1 @@
-export const path = 'http://api.kimalkova.nomoreparties.co/';
+export const path = 'https://api.kimalkova.nomoreparties.co/';

@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
 const cors = require('cors');
+//const cors = require('./middlewares/cors');
 const router = require('./routes/index');
 const error = require('./middlewares/error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -26,6 +27,7 @@ mongoose.connect(DB_URL, {
   autoIndex: true,
 });
 
+//app.use(cors);
 app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
 
 app.use(helmet());

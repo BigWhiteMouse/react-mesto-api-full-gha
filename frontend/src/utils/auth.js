@@ -1,4 +1,4 @@
-import {authPath} from "./utils";
+import {path} from "./utils";
 
 class Auth {
   constructor(path) {
@@ -51,12 +51,11 @@ class Auth {
       credentials: 'include',
       headers: {
         "Content-Type": "application/json",
-        //"Authorization" : `Bearer ${token}`
       }
     }).then(this._getResult);
   }
 }
 
-const auth = new Auth(authPath);
+const auth = new Auth(path);
 
 export default auth;

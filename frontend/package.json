@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run buildd && scp -r ./build/* malkovaki202020@62.84.119.180:/home/malkovaki202020/mesto-frontend"
+    "deploy": "npm run build && scp -r ./build/* malkovaki202020@62.84.119.180:/home/malkovaki202020/mesto-frontend"
   },
   "eslintConfig": {
     "extends": [

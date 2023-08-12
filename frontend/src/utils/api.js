@@ -1,8 +1,7 @@
-import {userToken, path} from './utils.js';
+import {path} from './utils.js';
 
 class Api {
-    constructor(token, path) {
-        this.token = token;
+    constructor(path) {
         this.path = path;
     }
 
@@ -18,7 +17,6 @@ class Api {
     _getHeaders(){
         return {
             "Content-Type": "application/json",
-           //authorization: this.token
         }
     }
 
@@ -104,6 +102,6 @@ class Api {
     }
 }
 
-const api = new Api(userToken, path);
+const api = new Api(path);
 
 export default api;

@@ -1,0 +1,13 @@
+.element__container{
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 15px 23px 21px;
+    align-items: baseline;
+}
+
+@media (max-width: 425px) {
+    .element__container {
+        padding-top: 23px;
+        padding-bottom: 24px;
+    }
+}

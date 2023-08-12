@@ -1,0 +1,15 @@
+.popup__content{
+    background-color: #FFFFFF;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width: 430px; /*Пришлось задать фиксированную ширину, иначе форма получалась на 20px уже, чем на макете*/
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+@media (max-width: 660px) {
+    .popup__content {
+        width: 282px;
+    }
+}

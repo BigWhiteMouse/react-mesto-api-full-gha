@@ -1,0 +1,10 @@
+.profile__owner-container{
+    padding-bottom: 8px;
+    display: flex;
+}
+
+@media (max-width: 425px) {
+    .profile__owner-container {
+        padding-bottom: 0;
+    }
+}

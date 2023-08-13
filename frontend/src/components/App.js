@@ -219,6 +219,29 @@ function App() {
       .catch((err) => console.log(err));
   }
 
+  function getNewUserInfo() {
+    api.getUserInformation()
+      .then((data) => {
+        setCurrentUser(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    api.getInitialCards()
+      .then((data) => {
+        setCards(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  React.useEffect(() => {
+    if (isLoggedIn) {
+      getNewUserInfo();
+    }
+  }, [isLoggedIn]);
+
   return (
     <div className="body">
       <div className="App">

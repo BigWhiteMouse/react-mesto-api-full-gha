@@ -58,7 +58,7 @@ class Auth {
   }
 
   signOut() {
-    return fetch(`${this.path}/signout`, {
+    return fetch(`${this.path}signout`, {
       method: "GET",
       credentials: 'include',
       headers: {

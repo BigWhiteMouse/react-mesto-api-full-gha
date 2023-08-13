@@ -23,6 +23,5 @@ router.patch('/me/avatar', celebrate({
     avatar: Joi.string().regex(linkRegex).required(),
   }),
 }), updateAvatar);
-//router.get('/signout', signOut);
 
 module.exports = router;

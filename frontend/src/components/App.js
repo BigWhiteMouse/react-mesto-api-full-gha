@@ -209,6 +209,16 @@ function App() {
       });
   }
 
+  function handleSignOut() {
+    auth.signOut()
+      .then(() => {
+        localStorage.removeItem('userId');
+        setIsLoggedIn(false);
+        navigate("/sign-in");
+      })
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div className="body">
       <div className="App">
@@ -216,6 +226,7 @@ function App() {
           <div className="page">
             <Header
               email={email}
+              onSignOut = {handleSignOut}
             />
             <Routes>
               <Route

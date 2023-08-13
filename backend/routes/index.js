@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
-const { createUser, login } = require('../controllers/users');
+const { createUser, login, signOut } = require('../controllers/users');
 const { linkRegex } = require('../utils/consts');
 const auth = require('../middlewares/auth');
 const userRouter = require('./users');
@@ -34,6 +34,8 @@ router.use(auth);
 
 router.use('/users', userRouter);
 router.use('/cards', cardRouter);
+
+router.get('/signout', signOut);
 
 router.use('*', (req, res, next) => {
   next(new NotFoundError(`Ресурс по адресу ${req.path} не найден`));

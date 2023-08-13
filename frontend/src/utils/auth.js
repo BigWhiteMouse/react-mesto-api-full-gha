@@ -14,14 +14,14 @@ class Auth {
   }
 
   //headers
-  _getHeaders(){
+  _getHeaders() {
     return {
       "Content-Type": "application/json"
     }
   }
 
   //регистрация
-  register(email, password){
+  register(email, password) {
     return fetch(`${this.path}signup`, {
       method: "POST",
       credentials: 'include',
@@ -33,7 +33,7 @@ class Auth {
   }
 
   //авторизация
-  login(email, password){
+  login(email, password) {
     return fetch(`${this.path}signin`, {
       method: "POST",
       credentials: 'include',
@@ -41,17 +41,29 @@ class Auth {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({email, password}),
-    }).then(this._getResult).then(res => {return res})
+    }).then(this._getResult).then(res => {
+      return res
+    })
   }
 
   //проверка токена
-  checkToken(){
+  checkToken() {
     return fetch(`${this.path}users/me`, {
       method: "GET",
       credentials: 'include',
       headers: {
         "Content-Type": "application/json",
       }
+    }).then(this._getResult);
+  }
+
+  signOut() {
+    return fetch(`${this.path}/signout`, {
+      method: "GET",
+      credentials: 'include',
+      headers: {
+        "Content-Type": "application/json",
+      },
     }).then(this._getResult);
   }
 }

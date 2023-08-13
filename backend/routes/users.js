@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 const {
-  getUsers, getUserById, updateUser, updateAvatar, getUserMe, signOut,
+  getUsers, getUserById, updateUser, updateAvatar, getUserMe,
 } = require('../controllers/users');
 const { linkRegex } = require('../utils/consts');
 

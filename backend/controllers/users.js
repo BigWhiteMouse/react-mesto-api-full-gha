@@ -5,7 +5,9 @@ const User = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
-const { createSuccessStatus, JWT_SECRET } = require('../utils/consts');
+const { createSuccessStatus } = require('../utils/consts');
+
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 function createUser(req, res, next) {
   const {
@@ -92,7 +94,7 @@ function login(req, res, next) {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        JWT_SECRET,
+        NODE_ENV === 'production' ? JWT_SECRET : 'some-token',
         { expiresIn: '7d' },
       );
       res.cookie('token', token, {

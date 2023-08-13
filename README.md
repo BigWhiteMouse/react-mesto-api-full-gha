@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP-адрес IP <62.84.119.180>
+IP <62.84.119.180>
 
 Frontend https://kimalkova.nomoreparties.co/
 
